@@ -20,17 +20,6 @@ export default function Hero() {
           className="max-w-xl"
         >
           {/* Eyebrow */}
-          <motion.div
-            variants={fadeUp}
-            transition={{ duration: 0.5, ease }}
-            className="inline-flex items-center gap-2.5 mb-8"
-          >
-            <span className="w-1.5 h-1.5 rounded-full bg-[#1b3a6b] animate-pulse" />
-            <span className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#3d3b37]">
-              A Partner of Afrirent Holdings (Pty) Ltd
-            </span>
-          </motion.div>
-
           {/* Headline — editorial scale */}
           <motion.h1
             variants={fadeUp}

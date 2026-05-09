@@ -38,17 +38,6 @@ export default function About() {
               </div>
             </div>
 
-            {/* Floating partner badge */}
-            <motion.div
-              initial={{ opacity: 0, scale: 0.85 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={viewport}
-              transition={{ duration: 0.4, delay: 0.45, ease }}
-              className="absolute -top-4 -right-4 bg-[#f5f3ed] border border-[#e0ddd5] rounded-2xl shadow-lg px-5 py-3.5"
-            >
-              <p className="text-[10px] font-bold uppercase tracking-wider text-[#6b6860] mb-1">Partner of</p>
-              <p className="text-sm font-bold text-[#111110]">Afrirent Holdings (Pty) Ltd</p>
-            </motion.div>
           </motion.div>
 
           {/* Content */}
@@ -83,7 +72,7 @@ export default function About() {
               className="text-[#3d3b37] leading-relaxed mb-4 text-base max-w-md"
             >
               Founded in 2012 by Synthia Nicolene Swartz, NamRent is a 100% black-owned
-              Namibian fleet management company and proud partner of Afrirent Holdings (Pty) Ltd.
+              Namibian fleet management company.
             </motion.p>
 
             <motion.p
