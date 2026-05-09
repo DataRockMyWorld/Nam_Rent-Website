@@ -1,62 +1,84 @@
-import { Truck, Users, Clock, ShieldCheck, Award, Handshake } from 'lucide-react';
+import { useEffect, useRef, useState } from 'react';
+import { useInView } from 'framer-motion';
 import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer, viewport, ease } from '../lib/motion';
+import { staggerContainer, fadeUp, viewport, ease } from '../lib/motion';
+
+function CountUp({ end, duration = 2.2 }) {
+  const [value, setValue] = useState(0);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: '-5% 0px' });
+
+  useEffect(() => {
+    if (!inView) return;
+    let startTs = null;
+    const tick = (ts) => {
+      if (!startTs) startTs = ts;
+      const elapsed = ts - startTs;
+      const raw = Math.min(elapsed / (duration * 1000), 1);
+      const eased = 1 - Math.pow(1 - raw, 3);
+      setValue(Math.round(eased * end));
+      if (raw < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }, [inView, end, duration]);
+
+  return <span ref={ref}>{value.toLocaleString()}</span>;
+}
 
 const stats = [
-  { value: '10,000+', label: 'Vehicles Daily',    icon: Truck,       color: 'text-blue-500' },
-  { value: '2012',    label: 'Year Founded',       icon: Award,       color: 'text-blue-500' },
-  { value: '24 / 7',  label: 'Bureau Support',     icon: Clock,       color: 'text-blue-500' },
-  { value: '100%',    label: 'Black-Owned',        icon: ShieldCheck, color: 'text-blue-500' },
-  { value: '8',       label: 'Core Services',      icon: Users,       color: 'text-blue-500' },
-  { value: '13+',     label: 'Years Experience',   icon: Handshake,   color: 'text-blue-500' },
+  { count: 10000, suffix: '+', label: 'Vehicles managed daily'  },
+  { count: 24,    suffix: '/7', label: 'Hour bureau support'    },
+  { count: 100,   suffix: '%',  label: 'Black-owned company'    },
+  { count: 13,    suffix: '+',  label: 'Years of experience'    },
 ];
 
 const industries = [
   'Mining & Resources',
   'Logistics & Transport',
   'Government Fleets',
-  'Construction & Yellow Fleet',
+  'Construction',
   'Agriculture',
   'Private Sector',
 ];
 
 export default function TrustSection() {
   return (
-    <section className="py-14 bg-white border-b border-gray-100">
+    <section className="py-20 border-t border-b border-[#e0ddd5]" style={{ backgroundColor: '#f5f3ed' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-10">
 
-        <motion.p
-          initial={{ opacity: 0, y: 12 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={viewport}
-          transition={{ duration: 0.5, ease }}
-          className="text-center text-xs font-bold text-gray-400 tracking-[0.18em] uppercase mb-12"
-        >
-          Geared and well-positioned to meet all your fleet management needs
-        </motion.p>
-
-        {/* Stat strip */}
+        {/* Giant counters */}
         <motion.div
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
           viewport={viewport}
-          className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-0 rounded-2xl overflow-hidden border border-gray-100 shadow-sm"
+          className="grid grid-cols-2 lg:grid-cols-4 divide-x divide-y lg:divide-y-0 divide-[#e0ddd5] mb-14"
         >
-          {stats.map(({ value, label, icon: Icon, color }, i) => (
+          {stats.map(({ count, suffix, label }, i) => (
             <motion.div
               key={label}
               variants={fadeUp}
-              transition={{ duration: 0.45, ease }}
-              whileHover={{ backgroundColor: '#f8faff', scale: 1.02 }}
-              className={`relative flex flex-col items-center text-center px-6 py-8 bg-white transition-all duration-200 cursor-default
-                ${i < stats.length - 1 ? 'border-b lg:border-b-0 border-r-0 md:border-r border-gray-100' : ''}`}
+              transition={{ duration: 0.55, ease, delay: i * 0.07 }}
+              className="px-8 py-10 relative group cursor-default"
             >
-              <div className="w-10 h-10 rounded-xl bg-blue-50 flex items-center justify-center mb-3">
-                <Icon className={`w-5 h-5 ${color}`} strokeWidth={1.75} />
+              {/* Ghost watermark */}
+              <div
+                aria-hidden
+                className="absolute inset-0 flex items-end justify-end pb-2 pr-4 pointer-events-none select-none overflow-hidden"
+              >
+                <span className="text-[100px] font-black leading-none text-[#e0ddd5]">
+                  {count >= 1000 ? Math.round(count / 1000) : count}
+                </span>
               </div>
-              <p className="text-2xl font-bold text-gray-900 tracking-tight leading-none mb-1">{value}</p>
-              <p className="text-xs text-gray-400 font-medium leading-snug">{label}</p>
+
+              <div className="relative z-10">
+                <p className="text-5xl sm:text-6xl font-black text-[#111110] tracking-tighter leading-none mb-2">
+                  <CountUp end={count} />{suffix}
+                </p>
+                <p className="text-sm text-[#3d3b37] font-medium">{label}</p>
+              </div>
+
+              <div className="absolute bottom-0 left-8 right-8 h-[2px] bg-[#111110] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
             </motion.div>
           ))}
         </motion.div>
@@ -66,12 +88,13 @@ export default function TrustSection() {
           initial={{ opacity: 0 }}
           whileInView={{ opacity: 1 }}
           viewport={viewport}
-          transition={{ duration: 0.6, delay: 0.25 }}
-          className="mt-10 flex flex-wrap justify-center items-center gap-x-8 gap-y-3"
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="flex flex-wrap justify-center items-center gap-x-6 gap-y-2"
         >
+          <span className="text-[10px] font-bold tracking-[0.15em] uppercase text-[#6b6860] mr-2">Serving</span>
           {industries.map((name, i) => (
-            <span key={name} className="flex items-center gap-3 text-xs font-medium text-gray-400">
-              {i > 0 && <span className="w-1 h-1 rounded-full bg-gray-200 hidden sm:block" />}
+            <span key={name} className="flex items-center gap-3 text-xs font-medium text-[#6b6860]">
+              {i > 0 && <span className="w-1 h-1 rounded-full bg-[#ccc8be] hidden sm:block" />}
               {name}
             </span>
           ))}

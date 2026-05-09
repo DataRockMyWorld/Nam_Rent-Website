@@ -10,6 +10,24 @@ export default {
         sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
       },
       colors: {
+        // Warm cream system — inspired by b-egg.farm
+        cream: {
+          50:  '#fdfcf9',
+          100: '#f5f3ed',   // primary bg
+          200: '#eeebe2',   // alt section bg
+          300: '#e0ddd5',   // borders / dividers
+          400: '#ccc8be',   // disabled states
+          500: '#a09d97',   // faint text
+        },
+        // Warm near-black ink system
+        ink: {
+          900: '#111110',   // headings / dark sections
+          800: '#1a1917',   // primary text
+          700: '#3d3b37',   // secondary text
+          500: '#6b6860',   // muted text
+          300: '#a09d97',   // faint text
+          100: '#c8c5bf',   // very faint
+        },
         brand: {
           50:  '#eff6ff',
           100: '#dbeafe',
@@ -22,12 +40,7 @@ export default {
           800: '#1e40af',
           900: '#1e3a8a',
         },
-        navy: {
-          900: '#0f172a',
-          800: '#1e293b',
-          700: '#334155',
-        },
-        // Ensure gray-950 is available (Tailwind v3 doesn't include it by default)
+        // Keep gray-950 for any remaining dark elements
         gray: {
           950: '#030712',
         },

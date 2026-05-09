@@ -1,6 +1,4 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
-import { motion } from 'framer-motion';
-import { fadeUp, staggerContainer, viewport, ease } from '../lib/motion';
 import logo from '../assets/logo.jpg';
 
 function LinkedinIcon({ className }) {
@@ -25,134 +23,105 @@ function FacebookIcon({ className }) {
   );
 }
 
-const footerLinks = {
-  Services: [
-    { label: 'GPS Tracking',      href: '#services' },
-    { label: 'Maintenance Mgmt',  href: '#services' },
-    { label: 'Fuel Management',   href: '#services' },
-    { label: 'Driver Safety',     href: '#services' },
-    { label: 'Compliance',        href: '#services' },
-    { label: 'Fleet Analytics',   href: '#services' },
-  ],
-  Company: [
-    { label: 'About Us',    href: '#about'   },
-    { label: 'Why NamRent', href: '#services' },
-    { label: 'Careers',     href: '#contact'  },
-    { label: 'News',        href: '#contact'  },
-  ],
-  Legal: [
-    { label: 'Privacy Policy',   href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'POPIA Compliance', href: '#' },
-  ],
-};
-
-const socials = [
-  { icon: LinkedinIcon, label: 'LinkedIn' },
-  { icon: XIcon,        label: 'X'        },
-  { icon: FacebookIcon, label: 'Facebook' },
-];
-
 export default function Footer() {
   return (
-    <footer className="bg-gray-950 text-white">
-
-      {/* Pre-footer CTA band */}
-      <div className="border-b border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-14 flex flex-col md:flex-row items-center justify-between gap-6">
-          <div>
-            <h3 className="text-xl font-bold mb-1">Ready for a seamless mobility solution?</h3>
-            <p className="text-sm text-gray-400">Our specialists will build a tailored proposal within one business day.</p>
-          </div>
-          <motion.a
-            href="#contact"
-            whileHover={{ scale: 1.03 }}
-            whileTap={{ scale: 0.97 }}
-            className="flex-shrink-0 inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-sm px-6 py-3 rounded-xl shadow-md hover:shadow-blue-600/30 transition-all duration-200"
-          >
-            Get a Quote
-          </motion.a>
-        </div>
-      </div>
+    <footer style={{ backgroundColor: '#111110' }}>
 
       {/* Main footer */}
-      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12">
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-16 border-b" style={{ borderColor: '#2a2a28' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
 
-          {/* Brand col */}
+          {/* Brand */}
           <div className="lg:col-span-2">
-            <a href="#home" className="inline-block mb-6">
-              <div className="bg-white rounded-xl px-3 py-2 inline-block shadow-md">
-                <img
-                  src={logo}
-                  alt="NamRent Fleet Management"
-                  className="h-9 w-auto object-contain"
-                />
-              </div>
-            </a>
-            <p className="text-gray-400 text-sm leading-relaxed mb-7 max-w-xs">
-              Founded in 2012. A 100% black-owned company and proud partner of Afrirent Holdings (Pty) Ltd.
+            <div className="inline-block bg-white rounded-xl px-3 py-2 shadow-sm mb-6">
+              <img src={logo} alt="NamRent" className="h-8 w-auto object-contain" />
+            </div>
+            <p className="text-sm leading-relaxed mb-7 max-w-xs" style={{ color: '#a09d97' }}>
+              Vehicle access and fleet management — made simple. Founded 2012. 100% black-owned. Proudly Namibian.
             </p>
-
-            <ul className="space-y-3.5">
+            <ul className="space-y-3">
               {[
-                { icon: Phone,  text: '+264 64 20 5345',                              href: 'tel:+264642205345'          },
-                { icon: Mail,   text: 'info@namrent.com.na',                          href: 'mailto:info@namrent.com.na' },
-                { icon: MapPin, text: '1st Floor, Swakopmund Plaza, Walvis Bay',      href: '#'                         },
+                { icon: Phone,  text: '+264 64 20 5345',               href: 'tel:+264642205345'          },
+                { icon: Mail,   text: 'info@namrent.com.na',           href: 'mailto:info@namrent.com.na' },
+                { icon: MapPin, text: '1st Floor, Swakopmund Plaza, Walvis Bay', href: '#'              },
               ].map(({ icon: Icon, text, href }) => (
                 <li key={text}>
-                  <a href={href} className="flex items-center gap-3 text-gray-400 hover:text-white transition-colors text-sm group">
-                    <Icon className="w-4 h-4 text-blue-400 flex-shrink-0" strokeWidth={1.75} />
-                    {text}
+                  <a href={href} className="flex items-center gap-3 text-sm transition-colors group" style={{ color: '#a09d97' }}>
+                    <Icon className="w-4 h-4 flex-shrink-0" style={{ color: '#6b6860' }} strokeWidth={1.75} />
+                    <span className="group-hover:text-[#f5f3ed] transition-colors">{text}</span>
                   </a>
                 </li>
               ))}
             </ul>
           </div>
 
-          {/* Link cols */}
-          {Object.entries(footerLinks).map(([category, links]) => (
-            <div key={category}>
-              <h4 className="text-[11px] font-bold tracking-widest uppercase text-gray-500 mb-5">
-                {category}
-              </h4>
-              <ul className="space-y-3">
-                {links.map(({ label, href }) => (
-                  <li key={label}>
-                    <a
-                      href={href}
-                      className="text-gray-400 hover:text-white text-sm transition-colors"
-                    >
-                      {label}
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+          {/* Solutions */}
+          <div>
+            <h4 className="text-[10px] font-bold tracking-widest uppercase mb-5" style={{ color: '#6b6860' }}>
+              Solutions
+            </h4>
+            <ul className="space-y-3">
+              {[
+                ['Fleet Management',      '#solutions'],
+                ['Vehicle Access',        '#solutions'],
+                ['Trade-In & Upgrade',    '#solutions'],
+                ['How It Works',          '#how-it-works'],
+                ['Get Started',           '#get-started'],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <a href={href} className="text-sm transition-colors hover:text-[#f5f3ed]" style={{ color: '#a09d97' }}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Company */}
+          <div>
+            <h4 className="text-[10px] font-bold tracking-widest uppercase mb-5" style={{ color: '#6b6860' }}>
+              Company
+            </h4>
+            <ul className="space-y-3">
+              {[
+                ['About NamRent',    '#about'  ],
+                ['Services',         '#services'],
+                ['Corporate Fleets', '#corporate'],
+                ['Contact',          '#contact' ],
+              ].map(([label, href]) => (
+                <li key={label}>
+                  <a href={href} className="text-sm transition-colors hover:text-[#f5f3ed]" style={{ color: '#a09d97' }}>
+                    {label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
         </div>
       </div>
 
       {/* Bottom bar */}
-      <div className="border-t border-white/[0.06]">
-        <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-gray-600 text-xs">
-            © {new Date().getFullYear()} NamRent Fleet Management Services · A Partner of Afrirent Holdings (Pty) Ltd
-          </p>
-          <div className="flex items-center gap-2">
-            {socials.map(({ icon: Icon, label }) => (
-              <motion.a
-                key={label}
-                href="#"
-                aria-label={label}
-                whileHover={{ scale: 1.15 }}
-                whileTap={{ scale: 0.9 }}
-                className="group w-8 h-8 rounded-lg bg-white/[0.05] hover:bg-blue-600 flex items-center justify-center transition-all duration-200"
-              >
-                <Icon className="w-[15px] h-[15px] text-gray-500 group-hover:text-white transition-colors" />
-              </motion.a>
-            ))}
-          </div>
+      <div className="max-w-7xl mx-auto px-6 md:px-10 py-5 flex flex-col sm:flex-row items-center justify-between gap-4">
+        <p className="text-xs" style={{ color: '#6b6860' }}>
+          © {new Date().getFullYear()} NamRent Fleet Management Services · A Partner of Afrirent Holdings (Pty) Ltd
+        </p>
+        <div className="flex items-center gap-2">
+          {[
+            { Icon: LinkedinIcon, label: 'LinkedIn' },
+            { Icon: XIcon,        label: 'X'        },
+            { Icon: FacebookIcon, label: 'Facebook' },
+          ].map(({ Icon, label }) => (
+            <a
+              key={label}
+              href="#"
+              aria-label={label}
+              className="w-8 h-8 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-[#f5f3ed]/10"
+              style={{ color: '#6b6860' }}
+            >
+              <Icon className="w-[15px] h-[15px]" />
+            </a>
+          ))}
         </div>
       </div>
     </footer>

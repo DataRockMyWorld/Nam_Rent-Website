@@ -1,13 +1,15 @@
-import Navbar      from './components/Navbar';
-import Hero        from './components/Hero';
-import TrustSection from './components/TrustSection';
-import About       from './components/About';
-import Services    from './components/Services';
-import WhyChooseUs from './components/WhyChooseUs';
-import Benefits    from './components/Benefits';
-import CtaSection  from './components/CtaSection';
-import Contact     from './components/Contact';
-import Footer      from './components/Footer';
+import Navbar           from './components/Navbar';
+import Hero             from './components/Hero';
+import TrustSection     from './components/TrustSection';
+import ServiceOptions   from './components/ServiceOptions';
+import HowItWorks       from './components/HowItWorks';
+import ServiceForm      from './components/ServiceForm';
+import About            from './components/About';
+import Services         from './components/Services';
+import CorporateClients from './components/CorporateClients';
+import CtaSection       from './components/CtaSection';
+import Contact          from './components/Contact';
+import Footer           from './components/Footer';
 
 export default function App() {
   return (
@@ -16,10 +18,12 @@ export default function App() {
       <main>
         <Hero />
         <TrustSection />
+        <ServiceOptions />
+        <HowItWorks />
+        <ServiceForm />
         <About />
         <Services />
-        <WhyChooseUs />
-        <Benefits />
+        <CorporateClients />
         <CtaSection />
         <Contact />
       </main>

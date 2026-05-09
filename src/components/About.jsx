@@ -1,91 +1,57 @@
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import { motion } from 'framer-motion';
-import { fadeUp, slideLeft, staggerContainer, viewport, ease } from '../lib/motion';
-
-const highlights = [
-  'Founded in 2012 by Synthia Nicolene Swartz',
-  '100% black-owned, proudly Namibian company',
-  'Partner of Afrirent Holdings (Pty) Ltd, South Africa',
-  'Innovating to resolve transport problems before they arise',
-];
-
-const miniStats = [
-  { value: '2012', label: 'Founded'     },
-  { value: '100%', label: 'Black-Owned' },
-  { value: '8',    label: 'Services'    },
-];
+import { fadeUp, staggerContainer, viewport, ease } from '../lib/motion';
+import fleetCars from '../assets/fleet-cars.png';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 bg-white">
+    <section id="about" className="py-24 border-t border-[#e0ddd5]" style={{ backgroundColor: '#f5f3ed' }}>
       <div className="max-w-7xl mx-auto px-6 md:px-10">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
 
-          {/* ── Visual panel ── */}
+          {/* Photo */}
           <motion.div
-            variants={slideLeft}
-            initial="hidden"
-            whileInView="visible"
+            initial={{ opacity: 0, x: -32 }}
+            whileInView={{ opacity: 1, x: 0 }}
             viewport={viewport}
-            transition={{ duration: 0.65, ease }}
+            transition={{ duration: 0.7, ease }}
             className="relative order-2 lg:order-1"
           >
-            <div
-              className="relative rounded-3xl overflow-hidden shadow-2xl"
-              style={{ background: 'linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #1d4ed8 100%)' }}
-            >
-              <div
-                className="absolute inset-0 opacity-[0.06]"
-                style={{
-                  backgroundImage: 'radial-gradient(circle, #ffffff 1px, transparent 1px)',
-                  backgroundSize: '24px 24px',
-                }}
+            <div className="relative rounded-3xl overflow-hidden h-[480px] shadow-2xl">
+              <img
+                src={fleetCars}
+                alt="NamRent branded fleet vehicles"
+                className="w-full h-full object-cover object-[55%_50%]"
               />
-              <svg viewBox="0 0 400 300" className="w-full opacity-[0.13]" fill="none">
-                <circle cx="200" cy="150" r="110" stroke="white" strokeWidth="0.8" />
-                <circle cx="200" cy="150" r="65" stroke="white" strokeWidth="0.8" strokeDasharray="5 3" />
-                <circle cx="200" cy="150" r="22" fill="white" opacity="0.5" />
-                {[0,60,120,180,240,300].map((deg) => {
-                  const r = (deg * Math.PI) / 180;
-                  return <line key={deg} x1={200+22*Math.cos(r)} y1={150+22*Math.sin(r)} x2={200+110*Math.cos(r)} y2={150+110*Math.sin(r)} stroke="white" strokeWidth="0.6" />;
-                })}
-                {[0,120,240].map((deg) => {
-                  const r = (deg * Math.PI) / 180;
-                  return <circle key={deg} cx={200+110*Math.cos(r)} cy={150+110*Math.sin(r)} r="9" fill="#60a5fa" />;
-                })}
-                {[60,180,300].map((deg) => {
-                  const r = (deg * Math.PI) / 180;
-                  return <circle key={deg} cx={200+65*Math.cos(r)} cy={150+65*Math.sin(r)} r="6" fill="white" opacity="0.8" />;
-                })}
-              </svg>
+              <div className="absolute inset-0 bg-gradient-to-t from-[#111110]/70 via-transparent to-transparent" />
 
-              <div className="absolute inset-0 flex flex-col items-center justify-center text-white px-10 pb-10 pt-6">
-                <p className="text-6xl font-black tracking-tighter leading-none mb-1">10K+</p>
-                <p className="text-sm font-medium text-blue-200 mb-8">Vehicles Managed Daily</p>
-                <div className="grid grid-cols-3 gap-0 w-full max-w-xs border border-white/10 rounded-2xl overflow-hidden">
-                  {miniStats.map(({ value, label }) => (
-                    <div key={label} className="text-center px-4 py-4 border-r border-white/10 last:border-0">
-                      <p className="text-xl font-bold">{value}</p>
-                      <p className="text-[11px] text-blue-300 mt-0.5">{label}</p>
-                    </div>
-                  ))}
+              {/* Bottom info row */}
+              <div className="absolute bottom-0 left-0 right-0 p-7 flex items-end justify-between">
+                <div>
+                  <p className="text-[10px] font-bold tracking-widest uppercase text-[#a09d97] mb-1">Headquartered</p>
+                  <p className="text-lg font-bold text-white">Walvis Bay, Namibia</p>
+                </div>
+                <div className="text-right">
+                  <p className="text-[10px] font-bold tracking-widest uppercase text-[#a09d97] mb-1">Founded</p>
+                  <p className="text-lg font-bold text-white">2012</p>
                 </div>
               </div>
             </div>
 
+            {/* Floating partner badge */}
             <motion.div
               initial={{ opacity: 0, scale: 0.85 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={viewport}
-              transition={{ duration: 0.4, delay: 0.35, ease }}
-              className="absolute -bottom-5 -right-4 bg-white rounded-2xl shadow-xl px-5 py-3.5 border border-gray-100"
+              transition={{ duration: 0.4, delay: 0.45, ease }}
+              className="absolute -top-4 -right-4 bg-[#f5f3ed] border border-[#e0ddd5] rounded-2xl shadow-lg px-5 py-3.5"
             >
-              <p className="text-[10px] font-semibold uppercase tracking-wider text-gray-400 mb-0.5">Headquartered in</p>
-              <p className="text-sm font-bold text-gray-900">Walvis Bay, Namibia</p>
+              <p className="text-[10px] font-bold uppercase tracking-wider text-[#6b6860] mb-1">Partner of</p>
+              <p className="text-sm font-bold text-[#111110]">Afrirent Holdings (Pty) Ltd</p>
             </motion.div>
           </motion.div>
 
-          {/* ── Content ── */}
+          {/* Content */}
           <motion.div
             variants={staggerContainer}
             initial="hidden"
@@ -96,53 +62,38 @@ export default function About() {
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.5, ease }}
-              className="text-blue-600 font-semibold text-xs tracking-widest uppercase mb-4"
+              className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#6b6860] mb-5"
             >
               About NamRent
             </motion.p>
 
             <motion.h2
               variants={fadeUp}
-              transition={{ duration: 0.55, ease, delay: 0.05 }}
-              className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight leading-[1.1] mb-5"
+              transition={{ duration: 0.6, ease, delay: 0.05 }}
+              className="font-bold text-[#111110] tracking-tight leading-[1.05] mb-6"
+              style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
             >
               Built for Africa.<br />
-              <span className="text-gray-400">Driven by purpose.</span>
+              <span style={{ color: '#a09d97' }}>Driven by purpose.</span>
             </motion.h2>
 
             <motion.p
               variants={fadeUp}
-              transition={{ duration: 0.5, ease, delay: 0.08 }}
-              className="text-base text-gray-500 leading-relaxed mb-4 max-w-md"
+              transition={{ duration: 0.5, ease, delay: 0.1 }}
+              className="text-[#3d3b37] leading-relaxed mb-4 text-base max-w-md"
             >
-              NamRent was founded in 2012 to provide professional, affordable fleet
-              management while advancing black economic empowerment. We are a
-              100% black-owned company with a core focus on the transport industry.
+              Founded in 2012 by Synthia Nicolene Swartz, NamRent is a 100% black-owned
+              Namibian fleet management company and proud partner of Afrirent Holdings (Pty) Ltd.
             </motion.p>
 
             <motion.p
               variants={fadeUp}
-              transition={{ duration: 0.5, ease, delay: 0.1 }}
-              className="text-base text-gray-500 leading-relaxed mb-10 max-w-md"
+              transition={{ duration: 0.5, ease, delay: 0.13 }}
+              className="text-[#3d3b37] leading-relaxed mb-10 text-base max-w-md"
             >
-              As a proud partner of Afrirent Holdings (Pty) Ltd, we are ideally
-              positioned to provide total fleet management solutions — from full
-              maintenance leases to fuel supply and vehicle tracking.
+              We exist to make vehicle access and fleet management straightforward — for
+              individuals, businesses, and corporate clients across the region.
             </motion.p>
-
-            <motion.ul variants={staggerContainer} className="space-y-3.5 mb-10">
-              {highlights.map((item) => (
-                <motion.li
-                  key={item}
-                  variants={fadeUp}
-                  transition={{ duration: 0.4, ease }}
-                  className="flex items-start gap-3"
-                >
-                  <CheckCircle2 className="w-[18px] h-[18px] text-blue-600 flex-shrink-0 mt-0.5" strokeWidth={2} />
-                  <span className="text-sm text-gray-600 leading-relaxed">{item}</span>
-                </motion.li>
-              ))}
-            </motion.ul>
 
             <motion.a
               href="#contact"
@@ -150,7 +101,7 @@ export default function About() {
               transition={{ duration: 0.4, ease }}
               whileHover={{ scale: 1.03 }}
               whileTap={{ scale: 0.97 }}
-              className="inline-flex items-center gap-2 bg-gray-900 hover:bg-gray-800 text-white text-sm font-semibold px-6 py-3.5 rounded-xl shadow-sm hover:shadow-md transition-all duration-200 group"
+              className="inline-flex items-center gap-2 bg-[#111110] hover:bg-[#1a1917] text-[#f5f3ed] text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 group"
             >
               Get in touch
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />

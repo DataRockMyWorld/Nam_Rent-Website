@@ -10,8 +10,10 @@
   }
 
   body {
-    @apply font-sans text-gray-800 bg-white;
+    background-color: #f5f3ed;
+    color: #1a1917;
     margin: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 
   #root {
@@ -23,24 +25,26 @@
     min-height: 100svh;
   }
 
-  /* Smooth focus outlines */
   :focus-visible {
-    @apply outline-none ring-2 ring-blue-500/50 ring-offset-2;
+    outline: none;
+    box-shadow: 0 0 0 2px #2563eb40;
   }
 
-  /* Remove default button styles */
   button {
     cursor: pointer;
   }
 
-  /* Prevent layout shift from scrollbar */
   html {
     scrollbar-gutter: stable;
   }
 }
 
 @layer utilities {
-  .text-gradient-blue {
-    @apply bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-blue-400;
-  }
+  .bg-cream       { background-color: #f5f3ed; }
+  .bg-cream-alt   { background-color: #eeebe2; }
+  .bg-ink         { background-color: #111110; }
+  .text-ink       { color: #1a1917; }
+  .text-ink-muted { color: #6b6860; }
+  .text-ink-faint { color: #a09d97; }
+  .border-cream   { border-color: #e0ddd5; }
 }
