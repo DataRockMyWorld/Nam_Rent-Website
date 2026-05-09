@@ -35,7 +35,7 @@ export default function Navbar() {
           <div className={`transition-all duration-500 rounded-xl px-3 py-1.5 ${
             scrolled ? 'bg-transparent' : 'bg-white/90 shadow-sm'
           }`}>
-            <img src={logo} alt="NamRent" className="h-7 md:h-8 w-auto object-contain" />
+            <img src={logo} alt="NamRent" className="h-9 md:h-11 w-auto object-contain" />
           </div>
         </a>
 
