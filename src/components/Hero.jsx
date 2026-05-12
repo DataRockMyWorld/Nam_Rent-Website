@@ -27,9 +27,8 @@ export default function Hero() {
             className="font-bold text-[#111110] leading-[1.0] tracking-[-0.03em] mb-7"
             style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
-            Integrated fleet<br />
-            operations &<br />
-            <span className="text-[#6b6860]">mobility solutions.</span>
+            Fleet operations.<br />
+            <span className="text-[#6b6860]">Expertly managed.</span>
           </motion.h1>
 
           {/* One-line sub */}
@@ -38,7 +37,7 @@ export default function Hero() {
             transition={{ duration: 0.55, ease, delay: 0.12 }}
             className="text-lg text-[#3d3b37] leading-relaxed mb-10 max-w-sm"
           >
-            NamRent delivers end-to-end fleet management, managed leasing, and mobility solutions for enterprises across Namibia — backed by 13+ years of operational experience.
+            NamRent delivers end-to-end fleet management, managed leasing, and mobility solutions for enterprises across Namibia, backed by 13 years of operational experience.
           </motion.p>
 
           {/* CTAs */}

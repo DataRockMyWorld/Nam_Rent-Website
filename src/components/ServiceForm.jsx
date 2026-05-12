@@ -244,8 +244,8 @@ export default function ServiceForm() {
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Are you a new or existing client?</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">This helps us understand how to best assist you.</p>
                     <div className="flex flex-col gap-3">
-                      <OptionCard selected={clientType === 'new'}      onClick={() => setClientType('new')}>New client — I have not worked with Namrent before</OptionCard>
-                      <OptionCard selected={clientType === 'existing'} onClick={() => setClientType('existing')}>Existing client — I already have a relationship with Namrent</OptionCard>
+                      <OptionCard selected={clientType === 'new'}      onClick={() => setClientType('new')}>New client: I have not worked with Namrent before</OptionCard>
+                      <OptionCard selected={clientType === 'existing'} onClick={() => setClientType('existing')}>Existing client: I already have a relationship with Namrent</OptionCard>
                     </div>
                   </motion.div>
                 )}
@@ -257,16 +257,16 @@ export default function ServiceForm() {
                     <p className="text-sm text-[#3d3b37] mb-6">Select the option that applies to your situation.</p>
                     <div className="flex flex-col gap-3">
                       <OptionCard selected={vehicleStatus === 'existing'} onClick={() => setVehicleStatus('existing')}>
-                        I already have a vehicle — I need fleet management support
+                        I already have a vehicle and need fleet management support
                       </OptionCard>
                       <OptionCard selected={vehicleStatus === 'new'} onClick={() => setVehicleStatus('new')}>
-                        I need a new vehicle — Help me access and manage one
+                        I need a new vehicle, help me access and manage one
                       </OptionCard>
                       <OptionCard selected={vehicleStatus === 'trade'} onClick={() => setVehicleStatus('trade')}>
                         I want to trade in my current vehicle for a newer one
                       </OptionCard>
                       <OptionCard selected={vehicleStatus === 'other'} onClick={() => setVehicleStatus('other')}>
-                        Other — I have a different enquiry or service requirement
+                        Other: I have a different enquiry or service requirement
                       </OptionCard>
                     </div>
                   </motion.div>

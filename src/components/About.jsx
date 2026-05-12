@@ -80,10 +80,10 @@ export default function About() {
               transition={{ duration: 0.5, ease, delay: 0.13 }}
               className="text-[#3d3b37] leading-relaxed mb-10 text-base max-w-md"
             >
-              We deliver integrated fleet services — from full maintenance leasing and vehicle
-              tracking to fuel management, regulatory administration, and full fleet outsourcing —
-              enabling businesses to focus on core operations while we manage the vehicles that
-              keep them moving.
+              We deliver integrated fleet services: full maintenance leasing, vehicle tracking,
+              fuel management, regulatory administration, and fleet outsourcing, enabling
+              businesses to focus on core operations while we manage the vehicles that keep
+              them moving.
             </motion.p>
 
             <motion.a

@@ -19,7 +19,7 @@ const benefits = [
   {
     icon:  TrendingUp,
     title: 'Increase productivity & efficiency',
-    body:  'Real-time tracking, route monitoring, and automated reporting give your team full visibility — enabling faster, smarter operational decisions.',
+    body:  'Real-time tracking, route monitoring, and automated reporting give your team full visibility, enabling faster and smarter operational decisions.',
     tag:   'Productivity',
   },
   {

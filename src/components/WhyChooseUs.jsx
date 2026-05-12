@@ -6,7 +6,7 @@ const features = [
   {
     icon:     TrendingUp,
     title:    'Strategic Growth',
-    desc:     'We build on core competencies and expand into complementary industries — adding value at every node of the fleet management value chain.',
+    desc:     'We build on core competencies and expand into complementary industries, adding value at every node of the fleet management value chain.',
     gradient: 'from-blue-600 to-cyan-400',
     shadow:   'rgba(37,99,235,0.25)',
     badge:    'Growth',
@@ -14,7 +14,7 @@ const features = [
   {
     icon:     Users,
     title:    'Experience & Dedicated Team',
-    desc:     'Key account executives, project management teams, and back-office resources — assembled to deliver smooth, large-scale service delivery.',
+    desc:     'Key account executives, project management teams, and back-office resources assembled to deliver smooth, large-scale service delivery.',
     gradient: 'from-violet-600 to-indigo-400',
     shadow:   'rgba(99,102,241,0.25)',
     badge:    'People',
@@ -22,7 +22,7 @@ const features = [
   {
     icon:     MonitorSmartphone,
     title:    'Technology-Driven',
-    desc:     'User-friendly interfaces, 24-hour call centre support, and real-time asset location — driving cost optimisation and operational value.',
+    desc:     'User-friendly interfaces, 24-hour call centre support, and real-time asset location, driving cost optimisation and operational value.',
     gradient: 'from-sky-600 to-blue-400',
     shadow:   'rgba(2,132,199,0.25)',
     badge:    'Tech',

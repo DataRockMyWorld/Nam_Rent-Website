@@ -47,7 +47,7 @@ export default function CorporateClients() {
               style={{ color: '#a09d97' }}
             >
               A single managed account. Consolidated maintenance, tracking, fuel management,
-              regulatory administration, and invoicing — built for enterprises that require
+              regulatory administration, and invoicing. Built for enterprises that require
               operational continuity, cost visibility, and scalable fleet support.
             </motion.p>
             <motion.a
