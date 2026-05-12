@@ -27,9 +27,9 @@ export default function Hero() {
             className="font-bold text-[#111110] leading-[1.0] tracking-[-0.03em] mb-7"
             style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
-            Vehicle access.<br />
-            Fleet management.<br />
-            <span className="text-[#6b6860]">Simplified.</span>
+            Enterprise fleet<br />
+            management,<br />
+            <span className="text-[#6b6860]">end to end.</span>
           </motion.h1>
 
           {/* One-line sub */}

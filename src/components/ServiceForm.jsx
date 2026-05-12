@@ -14,7 +14,7 @@ const serviceCheckboxes = [
 const vehicleTypes = ['Sedan', 'SUV', 'Pickup', 'Van', 'Other'];
 const conditions   = ['Excellent', 'Good', 'Fair', 'Poor'];
 
-const STEPS = ['Client Type', 'Vehicle Status', 'Service Details', 'Your Details'];
+const STEPS = ['Client Type', 'Your Need', 'Service Details', 'Your Details'];
 
 function StepIndicator({ current }) {
   return (
@@ -119,6 +119,8 @@ export default function ServiceForm() {
   const [tradeMiles, setTradeMiles]       = useState('');
   const [tradeCondition, setTradeCondition] = useState('');
   const [replaceType, setReplaceType]     = useState('');
+  // Other enquiry
+  const [otherEnquiry, setOtherEnquiry]   = useState('');
   // Shared
   const [services, setServices]           = useState({});
   const [duration, setDuration]           = useState('');
@@ -137,8 +139,9 @@ export default function ServiceForm() {
     if (step === 1) return !!vehicleStatus;
     if (step === 2) {
       if (vehicleStatus === 'existing') return !!(existingMake && duration);
-      if (vehicleStatus === 'new')      return !!(vehicleType && duration);
-      if (vehicleStatus === 'trade')    return !!(tradeMake && tradeCondition && replaceType && duration);
+      if (vehicleStatus === 'new')      return !!duration;
+      if (vehicleStatus === 'trade')    return !!duration;
+      if (vehicleStatus === 'other')    return !!otherEnquiry.trim();
     }
     if (step === 3) return !!(name && email && phone);
     return false;
@@ -223,7 +226,7 @@ export default function ServiceForm() {
                 Thank you, {name}. Our team will review your details and contact you within one business day to discuss your vehicle solution.
               </motion.p>
               <button
-                onClick={() => { setSubmitted(false); setStep(0); setClientType(''); setVehicleStatus(''); }}
+                onClick={() => { setSubmitted(false); setStep(0); setClientType(''); setVehicleStatus(''); setOtherEnquiry(''); setServices({}); setDuration(''); setComments(''); }}
                 className="mt-2 text-[#1b3a6b] text-sm font-semibold hover:underline"
               >
                 Submit another request
@@ -261,6 +264,9 @@ export default function ServiceForm() {
                       </OptionCard>
                       <OptionCard selected={vehicleStatus === 'trade'} onClick={() => setVehicleStatus('trade')}>
                         I want to trade in my current vehicle for a newer one
+                      </OptionCard>
+                      <OptionCard selected={vehicleStatus === 'other'} onClick={() => setVehicleStatus('other')}>
+                        Other — I have a different enquiry or service requirement
                       </OptionCard>
                     </div>
                   </motion.div>
@@ -302,18 +308,9 @@ export default function ServiceForm() {
 
                 {step === 2 && vehicleStatus === 'new' && (
                   <motion.div key="step2-new" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
-                    <h3 className="text-lg font-bold text-[#111110] mb-2">Tell us about the vehicle you need</h3>
-                    <p className="text-sm text-[#3d3b37] mb-6">We will help you access the right vehicle with full fleet management support.</p>
+                    <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
+                    <p className="text-sm text-[#3d3b37] mb-6">We will help you access the right vehicle and manage it from day one.</p>
                     <div className="flex flex-col gap-5">
-                      <div>
-                        <p className="text-sm font-medium text-[#3d3b37] mb-3">Type of vehicle required <span className="text-red-400">*</span></p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {vehicleTypes.map((v) => (
-                            <OptionCard key={v} selected={vehicleType === v} onClick={() => setVehicleType(v)}>{v}</OptionCard>
-                          ))}
-                        </div>
-                      </div>
-                      <InputField id="numNewVehicles" label="Number of vehicles required" placeholder="e.g. 2" value={numNewVehicles} onChange={(e) => setNumNewVehicles(e.target.value)} />
                       <div>
                         <p className="text-sm font-medium text-[#3d3b37] mb-3">Required services</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -331,7 +328,7 @@ export default function ServiceForm() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Additional comments</label>
+                        <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Additional details <span className="text-[#a09d97] font-normal">(optional)</span></label>
                         <textarea rows={3} placeholder="Any specific requirements or preferences..." value={comments} onChange={(e) => setComments(e.target.value)}
                           className="w-full px-4 py-3 rounded-xl border border-[#e0ddd5] bg-[#f5f3ed] text-[#1a1917] placeholder:text-[#a09d97] text-sm focus:outline-none focus:ring-2 focus:ring-[#1b3a6b]/25 focus:border-[#1b3a6b] resize-none transition-all duration-200" />
                       </div>
@@ -341,30 +338,9 @@ export default function ServiceForm() {
 
                 {step === 2 && vehicleStatus === 'trade' && (
                   <motion.div key="step2-trade" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
-                    <h3 className="text-lg font-bold text-[#111110] mb-2">Tell us about your trade-in</h3>
-                    <p className="text-sm text-[#3d3b37] mb-6">Provide basic details about your current vehicle and what you need as a replacement.</p>
+                    <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
+                    <p className="text-sm text-[#3d3b37] mb-6">We'll handle your trade-in and manage your replacement vehicle from day one.</p>
                     <div className="flex flex-col gap-5">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputField id="tradeMake"  label="Current Vehicle Make & Model" placeholder="e.g. Ford Ranger" value={tradeMake} onChange={(e) => setTradeMake(e.target.value)} required />
-                        <InputField id="tradeYear"  label="Year of Manufacture" placeholder="e.g. 2018" value={tradeYear} onChange={(e) => setTradeYear(e.target.value)} />
-                      </div>
-                      <InputField id="tradeMiles" label="Current Mileage (km)" placeholder="e.g. 95000" value={tradeMiles} onChange={(e) => setTradeMiles(e.target.value)} />
-                      <div>
-                        <p className="text-sm font-medium text-[#3d3b37] mb-3">Vehicle condition <span className="text-red-400">*</span></p>
-                        <div className="grid grid-cols-2 gap-2">
-                          {conditions.map((c) => (
-                            <OptionCard key={c} selected={tradeCondition === c} onClick={() => setTradeCondition(c)}>{c}</OptionCard>
-                          ))}
-                        </div>
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-[#3d3b37] mb-3">Preferred replacement vehicle type <span className="text-red-400">*</span></p>
-                        <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
-                          {vehicleTypes.map((v) => (
-                            <OptionCard key={v} selected={replaceType === v} onClick={() => setReplaceType(v)}>{v}</OptionCard>
-                          ))}
-                        </div>
-                      </div>
                       <div>
                         <p className="text-sm font-medium text-[#3d3b37] mb-3">Required services</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -382,10 +358,27 @@ export default function ServiceForm() {
                         </div>
                       </div>
                       <div>
-                        <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Additional comments</label>
+                        <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Additional details <span className="text-[#a09d97] font-normal">(optional)</span></label>
                         <textarea rows={3} placeholder="Any other details about your trade-in or requirements..." value={comments} onChange={(e) => setComments(e.target.value)}
                           className="w-full px-4 py-3 rounded-xl border border-[#e0ddd5] bg-[#f5f3ed] text-[#1a1917] placeholder:text-[#a09d97] text-sm focus:outline-none focus:ring-2 focus:ring-[#1b3a6b]/25 focus:border-[#1b3a6b] resize-none transition-all duration-200" />
                       </div>
+                    </div>
+                  </motion.div>
+                )}
+
+                {step === 2 && vehicleStatus === 'other' && (
+                  <motion.div key="step2-other" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                    <h3 className="text-lg font-bold text-[#111110] mb-2">Describe your enquiry</h3>
+                    <p className="text-sm text-[#3d3b37] mb-6">Tell us what you're looking for and our team will get back to you with the right solution.</p>
+                    <div>
+                      <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Your enquiry or required service <span className="text-red-400">*</span></label>
+                      <textarea
+                        rows={6}
+                        placeholder="Describe your enquiry, specific requirements, or the service you are looking for..."
+                        value={otherEnquiry}
+                        onChange={(e) => setOtherEnquiry(e.target.value)}
+                        className="w-full px-4 py-3 rounded-xl border border-[#e0ddd5] bg-[#f5f3ed] text-[#1a1917] placeholder:text-[#a09d97] text-sm focus:outline-none focus:ring-2 focus:ring-[#1b3a6b]/25 focus:border-[#1b3a6b] resize-none transition-all duration-200"
+                      />
                     </div>
                   </motion.div>
                 )}

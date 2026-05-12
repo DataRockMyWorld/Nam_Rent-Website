@@ -39,9 +39,9 @@ export default function CtaSection() {
             className="font-bold text-[#f5f3ed] tracking-tight leading-[1.05] mb-8"
             style={{ fontSize: 'clamp(2.75rem, 7vw, 5.5rem)' }}
           >
-            Simpler vehicle<br />
-            management<br />
-            <span style={{ color: '#a09d97' }}>starts here.</span>
+            Let us manage<br />
+            your fleet<br />
+            <span style={{ color: '#a09d97' }}>for you.</span>
           </motion.h2>
 
           <motion.div
