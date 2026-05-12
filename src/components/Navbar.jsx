@@ -4,10 +4,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import logo from '../assets/logo.jpg';
 
 const navLinks = [
-  { label: 'Solutions',    href: '#solutions'    },
-  { label: 'How It Works', href: '#how-it-works' },
-  { label: 'Services',     href: '#services'     },
   { label: 'About',        href: '#about'        },
+  { label: 'Solutions',    href: '#solutions'    },
+  { label: 'Services',     href: '#services'     },
+  { label: 'How It Works', href: '#how-it-works' },
   { label: 'Contact',      href: '#contact'      },
 ];
 
