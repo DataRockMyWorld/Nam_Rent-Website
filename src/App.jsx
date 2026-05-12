@@ -7,6 +7,7 @@ import ServiceForm      from './components/ServiceForm';
 import About            from './components/About';
 import Services         from './components/Services';
 import CorporateClients from './components/CorporateClients';
+import Clients          from './components/Clients';
 import CtaSection       from './components/CtaSection';
 import Contact          from './components/Contact';
 import Footer           from './components/Footer';
@@ -24,6 +25,7 @@ export default function App() {
         <About />
         <Services />
         <CorporateClients />
+        <Clients />
         <CtaSection />
         <Contact />
       </main>
