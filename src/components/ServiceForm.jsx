@@ -244,8 +244,8 @@ export default function ServiceForm() {
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Are you a new or existing client?</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">This helps us understand how to best assist you.</p>
                     <div className="flex flex-col gap-3">
-                      <OptionCard selected={clientType === 'new'}      onClick={() => setClientType('new')}>New client: I have not worked with Namrent before</OptionCard>
-                      <OptionCard selected={clientType === 'existing'} onClick={() => setClientType('existing')}>Existing client: I already have a relationship with Namrent</OptionCard>
+                      <OptionCard selected={clientType === 'new'}      onClick={() => setClientType('new')}>New Client</OptionCard>
+                      <OptionCard selected={clientType === 'existing'} onClick={() => setClientType('existing')}>Existing Client</OptionCard>
                     </div>
                   </motion.div>
                 )}
