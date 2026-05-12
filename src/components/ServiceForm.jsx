@@ -147,13 +147,40 @@ export default function ServiceForm() {
     return false;
   };
 
+  const encode = (data) =>
+    Object.keys(data)
+      .map((key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key] ?? ''))
+      .join('&');
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!canAdvance()) return;
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 1400));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encode({
+          'form-name':   'fleet-enquiry',
+          clientType,
+          vehicleStatus,
+          services:      Object.keys(services).filter((k) => services[k]).join(', '),
+          duration,
+          comments,
+          otherEnquiry,
+          name,
+          company,
+          email,
+          phone,
+          location,
+        }),
+      });
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Form submission error:', err);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
