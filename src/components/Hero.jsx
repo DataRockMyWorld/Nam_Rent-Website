@@ -27,9 +27,9 @@ export default function Hero() {
             className="font-bold text-[#111110] leading-[1.0] tracking-[-0.03em] mb-7"
             style={{ fontSize: 'clamp(3rem, 7vw, 5.5rem)' }}
           >
-            Enterprise fleet<br />
-            management,<br />
-            <span className="text-[#6b6860]">end to end.</span>
+            Integrated fleet<br />
+            operations &<br />
+            <span className="text-[#6b6860]">mobility solutions.</span>
           </motion.h1>
 
           {/* One-line sub */}
@@ -38,7 +38,7 @@ export default function Hero() {
             transition={{ duration: 0.55, ease, delay: 0.12 }}
             className="text-lg text-[#3d3b37] leading-relaxed mb-10 max-w-sm"
           >
-            Whether you own a vehicle, need one, or want to trade in — Namrent handles the rest.
+            NamRent delivers end-to-end fleet management, managed leasing, and mobility solutions for enterprises across Namibia — backed by 13+ years of operational experience.
           </motion.p>
 
           {/* CTAs */}
@@ -53,7 +53,7 @@ export default function Hero() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center gap-2.5 bg-[#111110] hover:bg-[#1a1917] text-[#f5f3ed] font-semibold text-[15px] px-7 py-4 rounded-xl transition-all duration-200 group"
             >
-              Get Started
+              Request a Consultation
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </motion.a>
             <motion.a
@@ -62,7 +62,7 @@ export default function Hero() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center justify-center gap-2 border border-[#e0ddd5] hover:border-[#ccc8be] bg-transparent hover:bg-[#eeebe2] text-[#1a1917] font-semibold text-[15px] px-7 py-4 rounded-xl transition-all duration-200"
             >
-              Our Solutions
+              Explore Services
             </motion.a>
           </motion.div>
         </motion.div>

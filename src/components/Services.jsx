@@ -6,14 +6,14 @@ import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer, viewport, ease } from '../lib/motion';
 
 const capabilities = [
-  { icon: FileText,      title: 'Full Maintenance Lease'          },
-  { icon: CreditCard,    title: 'Financial Lease & Instalment'    },
-  { icon: RefreshCw,     title: 'Vehicle Sale & Leaseback'        },
-  { icon: MapPin,        title: 'Vehicle Tracking & Monitoring'   },
-  { icon: ClipboardList, title: 'Regulatory Administration'       },
-  { icon: Fuel,          title: 'Fuel Management'                 },
-  { icon: Droplets,      title: 'Wet Stock & Fuel Supply'         },
-  { icon: Wrench,        title: 'Yellow Fleet & Maintenance'      },
+  { icon: FileText,      title: 'Full Maintenance Lease'              },
+  { icon: CreditCard,    title: 'Financial Lease & Instalment Sale'   },
+  { icon: RefreshCw,     title: 'Vehicle Sale & Leaseback'            },
+  { icon: MapPin,        title: 'Vehicle Tracking & Monitoring'       },
+  { icon: ClipboardList, title: 'Regulatory Administration Management' },
+  { icon: Fuel,          title: 'Fuel Management'                     },
+  { icon: Droplets,      title: 'Wet Stock & Fuel Supply'             },
+  { icon: Wrench,        title: 'Managed Fleet Services'              },
 ];
 
 export default function Services() {
@@ -34,7 +34,7 @@ export default function Services() {
               transition={{ duration: 0.5, ease }}
               className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#6b6860] mb-4"
             >
-              Our Services
+              Operational Capabilities
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -42,7 +42,7 @@ export default function Services() {
               className="font-bold text-[#111110] tracking-tight leading-tight max-w-md"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
             >
-              Everything your<br />fleet needs.
+              A full-spectrum<br />fleet service portfolio.
             </motion.h2>
           </div>
           <motion.a

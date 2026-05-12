@@ -2,11 +2,11 @@ import { motion } from 'framer-motion';
 import { viewport, ease } from '../lib/motion';
 
 const steps = [
-  { num: '01', title: 'Choose your vehicle situation',   above: true  },
-  { num: '02', title: 'Select the services you need',    above: false },
-  { num: '03', title: 'Pick your preferred duration',    above: true  },
-  { num: '04', title: 'Submit your request online',      above: false },
-  { num: '05', title: 'We contact you within 24 hours',  above: true  },
+  { num: '01', title: 'Outline your fleet requirements',       above: true  },
+  { num: '02', title: 'Select the fleet services you need',    above: false },
+  { num: '03', title: 'Confirm your preferred contract term',  above: true  },
+  { num: '04', title: 'Submit your fleet enquiry',             above: false },
+  { num: '05', title: 'Our team responds within 24 hours',     above: true  },
 ];
 
 /* ─── Node component ─── */
@@ -92,7 +92,7 @@ export default function HowItWorks() {
             className="flex items-center gap-4 self-start md:self-auto"
           >
             <p className="text-[#3d3b37] text-sm max-w-[180px] leading-relaxed">
-              Five steps. No complicated paperwork up front.
+              A streamlined five-step engagement process. No complex documentation upfront.
             </p>
             <motion.a
               href="#get-started"
@@ -100,7 +100,7 @@ export default function HowItWorks() {
               whileTap={{ scale: 0.97 }}
               className="flex-shrink-0 inline-flex items-center gap-1.5 bg-[#111110] hover:bg-[#1a1917] text-[#f5f3ed] text-xs font-semibold px-5 py-2.5 rounded-xl transition-all duration-200"
             >
-              Start now →
+              Start enquiry →
             </motion.a>
           </motion.div>
         </div>

@@ -138,7 +138,7 @@ export default function ServiceForm() {
     if (step === 0) return !!clientType;
     if (step === 1) return !!vehicleStatus;
     if (step === 2) {
-      if (vehicleStatus === 'existing') return !!(existingMake && duration);
+      if (vehicleStatus === 'existing') return !!duration;
       if (vehicleStatus === 'new')      return !!duration;
       if (vehicleStatus === 'trade')    return !!duration;
       if (vehicleStatus === 'other')    return !!otherEnquiry.trim();
@@ -180,14 +180,14 @@ export default function ServiceForm() {
             className="font-bold text-[#111110] tracking-tight mb-4"
             style={{ fontSize: 'clamp(1.75rem, 4vw, 3rem)' }}
           >
-            Choose Your Fleet Solution
+            Tell Us About Your Fleet Requirements
           </motion.h2>
           <motion.p
             variants={fadeUp}
             transition={{ duration: 0.5, ease, delay: 0.1 }}
             className="text-[#3d3b37] max-w-md mx-auto leading-relaxed"
           >
-            Answer a few quick questions. We'll be in touch within one business day.
+            Tell us about your operational requirements. Our team will follow up within one business day.
           </motion.p>
         </motion.div>
 
@@ -275,17 +275,9 @@ export default function ServiceForm() {
                 {/* ── STEP 2: Service Details ── */}
                 {step === 2 && vehicleStatus === 'existing' && (
                   <motion.div key="step2-existing" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
-                    <h3 className="text-lg font-bold text-[#111110] mb-2">Tell us about your vehicle</h3>
-                    <p className="text-sm text-[#3d3b37] mb-6">Provide some basic details about the vehicle(s) you want managed.</p>
+                    <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
+                    <p className="text-sm text-[#3d3b37] mb-6">Tell us what you need and we'll take care of the rest.</p>
                     <div className="flex flex-col gap-5">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputField id="existingMake" label="Vehicle Make & Model" placeholder="e.g. Toyota HiLux" value={existingMake} onChange={(e) => setExistingMake(e.target.value)} required />
-                        <InputField id="existingYear" label="Year of Manufacture" placeholder="e.g. 2020" value={existingYear} onChange={(e) => setExistingYear(e.target.value)} />
-                      </div>
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <InputField id="existingMiles" label="Current Mileage (km)" placeholder="e.g. 45000" value={existingMiles} onChange={(e) => setExistingMiles(e.target.value)} />
-                        <InputField id="numVehicles"   label="Number of Vehicles" placeholder="e.g. 3" value={numVehicles} onChange={(e) => setNumVehicles(e.target.value)} />
-                      </div>
                       <div>
                         <p className="text-sm font-medium text-[#3d3b37] mb-3">Required services</p>
                         <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
@@ -301,6 +293,11 @@ export default function ServiceForm() {
                             <OptionCard key={d} selected={duration === d} onClick={() => setDuration(d)}>{d}</OptionCard>
                           ))}
                         </div>
+                      </div>
+                      <div>
+                        <label className="block text-sm font-medium text-[#3d3b37] mb-1.5">Additional details <span className="text-[#a09d97] font-normal">(optional)</span></label>
+                        <textarea rows={3} placeholder="Any specific details about your vehicle(s) or requirements..." value={comments} onChange={(e) => setComments(e.target.value)}
+                          className="w-full px-4 py-3 rounded-xl border border-[#e0ddd5] bg-[#f5f3ed] text-[#1a1917] placeholder:text-[#a09d97] text-sm focus:outline-none focus:ring-2 focus:ring-[#1b3a6b]/25 focus:border-[#1b3a6b] resize-none transition-all duration-200" />
                       </div>
                     </div>
                   </motion.div>

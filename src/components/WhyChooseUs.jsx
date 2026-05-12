@@ -29,8 +29,8 @@ const features = [
   },
   {
     icon:     Handshake,
-    title:    'Exceptional Partnerships',
-    desc:     'In close partnership with Afrirent Holdings, we leverage group strength to deliver expansion strategies, growth, and consistent service excellence.',
+    title:    'Strategic Partnerships',
+    desc:     'We leverage strong industry relationships and group-level capabilities to deliver consistent service expansion, operational growth, and excellence across all client accounts.',
     gradient: 'from-slate-700 to-slate-500',
     shadow:   'rgba(51,65,85,0.25)',
     badge:    'Partnership',
@@ -62,14 +62,14 @@ export default function WhyChooseUs() {
               transition={{ duration: 0.55, ease, delay: 0.05 }}
               className="text-3xl md:text-4xl font-bold text-gray-900 tracking-tight max-w-lg leading-tight"
             >
-              Four pillars that set us apart
+              What sets our operations apart
             </motion.h2>
             <motion.p
               variants={fadeUp}
               transition={{ duration: 0.5, ease, delay: 0.08 }}
               className="text-sm text-gray-500 max-w-xs leading-relaxed md:text-right"
             >
-              We innovate to resolve transport management problems before they present themselves.
+              We anticipate operational challenges and build solutions before they impact your fleet.
             </motion.p>
           </div>
         </motion.div>

@@ -15,45 +15,45 @@ const options = [
   {
     num: '01',
     icon: Settings,
-    badge: 'Already have a vehicle',
-    title: 'Fleet Management',
-    line: 'We manage what you own — maintenance, tracking, licensing, and insurance.',
-    services: ['Maintenance', 'GPS Tracking', 'Insurance support', 'Licensing', 'Fleet management'],
+    badge: 'Managed Fleet Services',
+    title: 'Managed Fleet Operations',
+    line: 'We assume full operational responsibility — maintenance, tracking, licensing, fuel management, and fleet administration.',
+    services: ['Full Maintenance Lease', 'GPS Tracking & Monitoring', 'Regulatory Administration', 'Fuel Management', 'Fleet Administration'],
     bg: '#111110',
-    topBar: '#f5f3ed22',           // subtle warm line
+    topBar: '#f5f3ed22',
     text: '#f5f3ed',
     muted: '#a09d97',
     border: 'rgba(255,255,255,0.07)',
     chip: 'rgba(255,255,255,0.06)',
     cta: '#a09d97',
     ctaHover: '#f5f3ed',
-    label: 'Manage my vehicle',
+    label: 'Explore fleet management',
   },
   {
     num: '02',
     icon: FileText,
-    badge: 'Need a new vehicle',
-    title: 'Vehicle Access',
-    line: 'We help you procure the right vehicle and manage it from day one.',
-    services: ['Procurement support', 'Maintenance', 'GPS Tracking', 'Insurance support', 'Fleet management'],
+    badge: 'Fleet Procurement & Leasing',
+    title: 'Fleet Procurement & Leasing',
+    line: 'Full Maintenance Lease and financial leasing solutions — we procure, register, and manage the asset from day one.',
+    services: ['Full Maintenance Lease', 'Financial Lease', 'Instalment Sale', 'Maintenance Coordination', 'Fleet Administration'],
     types: ['Sedan', 'SUV', 'Pickup', 'Van', 'Other'],
     bg: '#f5f3ed',
-    topBar: NAV,                    // strong navy accent stripe
+    topBar: NAV,
     text: '#111110',
     muted: '#3d3b37',
     border: '#e0ddd5',
     chip: '#e8e5dc',
     cta: NAV,
     ctaHover: '#152d54',
-    label: 'Get a new vehicle',
+    label: 'Explore leasing options',
   },
   {
     num: '03',
     icon: RefreshCw,
-    badge: 'Trade in your vehicle',
-    title: 'Trade-In & Upgrade',
-    line: 'Trade your existing vehicle for a newer one with full fleet management.',
-    services: ['Trade-in support', 'Procurement', 'Maintenance', 'GPS Tracking', 'Fleet management'],
+    badge: 'Asset Optimisation',
+    title: 'Sale & Leaseback',
+    line: 'Convert existing fleet assets into working capital while retaining full operational use — managed end to end.',
+    services: ['Vehicle Sale & Leaseback', 'Asset Assessment', 'Maintenance Continuity', 'GPS Tracking', 'Fleet Administration'],
     bg: '#1b3a6b',
     topBar: 'rgba(255,255,255,0.15)',
     text: '#f5f3ed',
@@ -62,7 +62,7 @@ const options = [
     chip: 'rgba(255,255,255,0.08)',
     cta: '#c8daf4',
     ctaHover: '#f5f3ed',
-    label: 'Start my trade-in',
+    label: 'Explore leaseback options',
   },
 ];
 
@@ -84,7 +84,7 @@ export default function ServiceOptions() {
             transition={{ duration: 0.5, ease }}
             className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#3d3b37] mb-4"
           >
-            Vehicle Solutions
+            Fleet Solutions
           </motion.p>
           <motion.h2
             variants={fadeUp}
@@ -92,8 +92,8 @@ export default function ServiceOptions() {
             className="font-bold text-[#111110] tracking-tight leading-[1.05]"
             style={{ fontSize: 'clamp(2.25rem, 5vw, 4rem)' }}
           >
-            Three pathways.<br />
-            <span style={{ color: '#a09d97' }}>One partner.</span>
+            Three service pathways.<br />
+            <span style={{ color: '#a09d97' }}>One operations partner.</span>
           </motion.h2>
         </motion.div>
 

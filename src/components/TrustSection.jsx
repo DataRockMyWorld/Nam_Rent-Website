@@ -26,19 +26,21 @@ function CountUp({ end, duration = 2.2 }) {
 }
 
 const stats = [
-  { count: 10000, suffix: '+', label: 'Vehicles managed daily'  },
-  { count: 24,    suffix: '/7', label: 'Hour bureau support'    },
-  { count: 100,   suffix: '%',  label: 'Black-owned company'    },
-  { count: 13,    suffix: '+',  label: 'Years of experience'    },
+  { count: 10000, suffix: '+',  label: 'Vehicles under management'   },
+  { count: 24,    suffix: '/7', label: 'Fleet operations support'     },
+  { count: 9,     suffix: '',   label: 'Managed service capabilities' },
+  { count: 13,    suffix: '+',  label: 'Years of fleet expertise'     },
 ];
 
 const industries = [
   'Mining & Resources',
-  'Logistics & Transport',
-  'Government Fleets',
   'Construction',
+  'Engineering & Projects',
+  'Logistics & Transport',
+  'Corporate & Commercial',
+  'Government & Public Sector',
+  'Field Services',
   'Agriculture',
-  'Private Sector',
 ];
 
 export default function TrustSection() {

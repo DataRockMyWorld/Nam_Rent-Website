@@ -29,7 +29,7 @@ export default function CorporateClients() {
               className="text-[11px] font-bold tracking-[0.15em] uppercase mb-5"
               style={{ color: '#a09d97' }}
             >
-              Corporate &amp; Tender
+              Enterprise Fleet Solutions
             </motion.p>
             <motion.h2
               variants={fadeUp}
@@ -37,8 +37,8 @@ export default function CorporateClients() {
               className="font-bold tracking-tight leading-[1.05] mb-6"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)', color: '#f5f3ed' }}
             >
-              Fleet solutions<br />
-              <span style={{ color: '#a09d97' }}>for businesses.</span>
+              End-to-end fleet<br />
+              <span style={{ color: '#a09d97' }}>for enterprise operations.</span>
             </motion.h2>
             <motion.p
               variants={fadeUp}
@@ -46,8 +46,9 @@ export default function CorporateClients() {
               className="text-base leading-relaxed mb-10 max-w-md"
               style={{ color: '#a09d97' }}
             >
-              One account. Multiple vehicles. Consolidated maintenance, tracking, licensing,
-              and invoicing — built for companies with structured fleet needs.
+              A single managed account. Consolidated maintenance, tracking, fuel management,
+              regulatory administration, and invoicing — built for enterprises that require
+              operational continuity, cost visibility, and scalable fleet support.
             </motion.p>
             <motion.a
               href="#get-started"

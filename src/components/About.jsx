@@ -62,8 +62,8 @@ export default function About() {
               className="font-bold text-[#111110] tracking-tight leading-[1.05] mb-6"
               style={{ fontSize: 'clamp(2rem, 4vw, 3.25rem)' }}
             >
-              Built for Africa.<br />
-              <span style={{ color: '#a09d97' }}>Driven by purpose.</span>
+              Trusted fleet operations<br />
+              <span style={{ color: '#a09d97' }}>since 2012.</span>
             </motion.h2>
 
             <motion.p
@@ -71,8 +71,8 @@ export default function About() {
               transition={{ duration: 0.5, ease, delay: 0.1 }}
               className="text-[#3d3b37] leading-relaxed mb-4 text-base max-w-md"
             >
-              Founded in 2012 by Synthia Nicolene Swartz, NamRent is a 100% black-owned
-              Namibian fleet management company.
+              Founded in 2012, NamRent is a Namibian fleet operations and mobility solutions
+              company with over a decade of enterprise fleet management experience.
             </motion.p>
 
             <motion.p
@@ -80,8 +80,10 @@ export default function About() {
               transition={{ duration: 0.5, ease, delay: 0.13 }}
               className="text-[#3d3b37] leading-relaxed mb-10 text-base max-w-md"
             >
-              We exist to make vehicle access and fleet management straightforward — for
-              individuals, businesses, and corporate clients across the region.
+              We deliver integrated fleet services — from full maintenance leasing and vehicle
+              tracking to fuel management, regulatory administration, and full fleet outsourcing —
+              enabling businesses to focus on core operations while we manage the vehicles that
+              keep them moving.
             </motion.p>
 
             <motion.a
@@ -92,7 +94,7 @@ export default function About() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 bg-[#111110] hover:bg-[#1a1917] text-[#f5f3ed] text-sm font-semibold px-6 py-3.5 rounded-xl transition-all duration-200 group"
             >
-              Get in touch
+              Discuss your fleet requirements
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </motion.a>
           </motion.div>

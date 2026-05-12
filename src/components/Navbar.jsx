@@ -64,7 +64,7 @@ export default function Navbar() {
           whileTap={{ scale: 0.97 }}
           className="hidden lg:inline-flex items-center gap-2 bg-[#111110] hover:bg-[#1a1917] text-[#f5f3ed] text-sm font-semibold px-5 py-2.5 rounded-xl transition-all duration-200"
         >
-          Get Started
+          Speak to Our Team
         </motion.a>
 
         {/* Mobile toggle */}
@@ -105,7 +105,7 @@ export default function Navbar() {
                   onClick={() => setMenuOpen(false)}
                   className="block text-center bg-[#111110] text-[#f5f3ed] text-sm font-semibold py-3 px-4 rounded-xl transition-colors"
                 >
-                  Get Started
+                  Speak to Our Team
                 </a>
               </li>
             </ul>

@@ -30,7 +30,7 @@ export default function CtaSection() {
             transition={{ duration: 0.5, ease }}
             className="text-[11px] font-bold tracking-[0.15em] uppercase text-[#a09d97] mb-8"
           >
-            Ready to start
+            Take the next step
           </motion.p>
 
           <motion.h2
@@ -55,7 +55,7 @@ export default function CtaSection() {
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2.5 bg-[#f5f3ed] hover:bg-white text-[#111110] font-semibold text-base px-8 py-4 rounded-xl transition-all duration-200 group"
             >
-              Start Your Journey
+              Request a Consultation
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </motion.a>
             <motion.a
