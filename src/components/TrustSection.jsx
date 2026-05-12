@@ -33,14 +33,12 @@ const stats = [
 ];
 
 const industries = [
-  'Mining & Resources',
-  'Construction',
-  'Engineering & Projects',
+  'Corporate Entities',
+  'Government Agencies',
+  'Parastatals',
+  'Municipalities',
+  'Mining & Construction',
   'Logistics & Transport',
-  'Corporate & Commercial',
-  'Government & Public Sector',
-  'Field Services',
-  'Agriculture',
 ];
 
 export default function TrustSection() {
