@@ -3,9 +3,11 @@ import { motion } from 'framer-motion';
 import { fadeUp, staggerContainer, viewport, ease } from '../lib/motion';
 
 const contactDetails = [
-  { icon: Phone,  label: 'Phone',   value: '+264 64 20 5345',                              href: 'tel:+264642205345'          },
-  { icon: Mail,   label: 'Email',   value: 'info@namrent.com.na',                          href: 'mailto:info@namrent.com.na' },
-  { icon: MapPin, label: 'Address', value: '1st Floor, Swakopmund Plaza, Walvis Bay',      href: '#'                         },
+  { icon: Phone,  label: 'Phone',   value: '+264 81 142 4092',                                                          href: 'tel:+264811424092'                },
+  { icon: Phone,  label: 'Phone',   value: '+264 81 294 0222',                                                          href: 'tel:+264812940222'                },
+  { icon: Mail,   label: 'Email',   value: 'info@namrentfleet.com',                                                     href: 'mailto:info@namrentfleet.com'     },
+  { icon: Mail,   label: 'Email',   value: 'cch@iway.na',                                                               href: 'mailto:cch@iway.na'               },
+  { icon: MapPin, label: 'Address', value: 'Heuschneider Platz 11, c/o Kolonnen & Heuschneider Street, Swakopmund',    href: '#'                                },
 ];
 
 export default function Contact() {
@@ -32,7 +34,7 @@ export default function Contact() {
               Talk to our<br />fleet specialists.
             </h2>
             <p className="text-[#3d3b37] text-base leading-relaxed max-w-sm">
-              Based in Walvis Bay. We respond within one business day.
+              Based in Swakopmund. We respond within one business day.
             </p>
 
             {/* Office hours */}

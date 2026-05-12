@@ -37,13 +37,14 @@ export default function Footer() {
               <img src={logo} alt="NamRent" className="h-8 w-auto object-contain" />
             </div>
             <p className="text-sm leading-relaxed mb-7 max-w-xs" style={{ color: '#a09d97' }}>
-              Vehicle access and fleet management — made simple. Founded 2012. 100% black-owned. Proudly Namibian.
+              Integrated fleet operations and mobility solutions. Founded 2012. Proudly Namibian.
             </p>
             <ul className="space-y-3">
               {[
-                { icon: Phone,  text: '+264 64 20 5345',               href: 'tel:+264642205345'          },
-                { icon: Mail,   text: 'info@namrent.com.na',           href: 'mailto:info@namrent.com.na' },
-                { icon: MapPin, text: '1st Floor, Swakopmund Plaza, Walvis Bay', href: '#'              },
+                { icon: Phone,  text: '+264 81 142 4092',                                                       href: 'tel:+264811424092'            },
+                { icon: Phone,  text: '+264 81 294 0222',                                                       href: 'tel:+264812940222'            },
+                { icon: Mail,   text: 'info@namrentfleet.com',                                                  href: 'mailto:info@namrentfleet.com' },
+                { icon: MapPin, text: 'Heuschneider Platz 11, c/o Kolonnen & Heuschneider Street, Swakopmund', href: '#'                            },
               ].map(({ icon: Icon, text, href }) => (
                 <li key={text}>
                   <a href={href} className="flex items-center gap-3 text-sm transition-colors group" style={{ color: '#a09d97' }}>

@@ -59,12 +59,12 @@ export default function CtaSection() {
               <ArrowRight className="w-4 h-4 group-hover:translate-x-0.5 transition-transform" />
             </motion.a>
             <motion.a
-              href="tel:+264642205345"
+              href="tel:+264811424092"
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.97 }}
               className="inline-flex items-center gap-2 border border-[#6b6860] hover:border-[#a09d97] text-[#c8c5bf] hover:text-[#f5f3ed] font-semibold text-base px-8 py-4 rounded-xl transition-all duration-200"
             >
-              +264 64 20 5345
+              +264 81 142 4092
             </motion.a>
           </motion.div>
         </motion.div>

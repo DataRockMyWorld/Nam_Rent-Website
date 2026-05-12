@@ -29,7 +29,7 @@ export default function About() {
               <div className="absolute bottom-0 left-0 right-0 p-7 flex items-end justify-between">
                 <div>
                   <p className="text-[10px] font-bold tracking-widest uppercase text-[#a09d97] mb-1">Headquartered</p>
-                  <p className="text-lg font-bold text-white">Walvis Bay, Namibia</p>
+                  <p className="text-lg font-bold text-white">Swakopmund, Namibia</p>
                 </div>
                 <div className="text-right">
                   <p className="text-[10px] font-bold tracking-widest uppercase text-[#a09d97] mb-1">Founded</p>

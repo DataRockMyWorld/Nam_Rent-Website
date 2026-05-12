@@ -113,7 +113,7 @@ export default function Hero() {
             <p className="text-sm text-[#3d3b37] mt-0.5">vehicles managed daily</p>
           </div>
           <div className="w-full h-px bg-[#e0ddd5]" />
-          <p className="text-[10px] text-[#6b6860]">Est. 2012 · Walvis Bay, Namibia</p>
+          <p className="text-[10px] text-[#6b6860]">Est. 2012 · Swakopmund, Namibia</p>
         </motion.div>
       </div>
     </section>
