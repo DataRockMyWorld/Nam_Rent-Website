@@ -2,10 +2,10 @@ import { motion } from 'framer-motion';
 import { viewport, ease } from '../lib/motion';
 
 const steps = [
-  { num: '01', title: 'Outline your fleet requirements',       above: true  },
-  { num: '02', title: 'Select the fleet services you need',    above: false },
-  { num: '03', title: 'Confirm your preferred contract term',  above: true  },
-  { num: '04', title: 'Submit your fleet enquiry',             above: false },
+  { num: '01', title: 'Tell us who you are',                   above: true  },
+  { num: '02', title: 'Share your contact details',            above: false },
+  { num: '03', title: 'Describe your fleet requirement',       above: true  },
+  { num: '04', title: 'Select the services you need',          above: false },
   { num: '05', title: 'Our team responds within 24 hours',     above: true  },
 ];
 

@@ -14,7 +14,7 @@ const serviceCheckboxes = [
 const vehicleTypes = ['Sedan', 'SUV', 'Pickup', 'Van', 'Other'];
 const conditions   = ['Excellent', 'Good', 'Fair', 'Poor'];
 
-const STEPS = ['Client Type', 'Your Need', 'Service Details', 'Your Details'];
+const STEPS = ['Client Type', 'Your Details', 'Your Need', 'Service Details'];
 
 function StepIndicator({ current }) {
   return (
@@ -136,14 +136,14 @@ export default function ServiceForm() {
 
   const canAdvance = () => {
     if (step === 0) return !!clientType;
-    if (step === 1) return !!vehicleStatus;
-    if (step === 2) {
+    if (step === 1) return !!(name && email && phone);
+    if (step === 2) return !!vehicleStatus;
+    if (step === 3) {
       if (vehicleStatus === 'existing') return !!duration;
       if (vehicleStatus === 'new')      return !!duration;
       if (vehicleStatus === 'trade')    return !!duration;
       if (vehicleStatus === 'other')    return !!otherEnquiry.trim();
     }
-    if (step === 3) return !!(name && email && phone);
     return false;
   };
 
@@ -277,9 +277,9 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {/* ── STEP 1: Vehicle Status ── */}
-                {step === 1 && (
-                  <motion.div key="step1" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {/* ── STEP 2: Your Need ── */}
+                {step === 2 && (
+                  <motion.div key="step2" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Which best describes your current need?</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">Select the option that applies to your situation.</p>
                     <div className="flex flex-col gap-3">
@@ -299,9 +299,9 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {/* ── STEP 2: Service Details ── */}
-                {step === 2 && vehicleStatus === 'existing' && (
-                  <motion.div key="step2-existing" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {/* ── STEP 3: Service Details ── */}
+                {step === 3 && vehicleStatus === 'existing' && (
+                  <motion.div key="step3-existing" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">Tell us what you need and we'll take care of the rest.</p>
                     <div className="flex flex-col gap-5">
@@ -330,8 +330,8 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {step === 2 && vehicleStatus === 'new' && (
-                  <motion.div key="step2-new" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {step === 3 && vehicleStatus === 'new' && (
+                  <motion.div key="step3-new" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">We will help you access the right vehicle and manage it from day one.</p>
                     <div className="flex flex-col gap-5">
@@ -360,8 +360,8 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {step === 2 && vehicleStatus === 'trade' && (
-                  <motion.div key="step2-trade" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {step === 3 && vehicleStatus === 'trade' && (
+                  <motion.div key="step3-trade" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Select the services you need</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">We'll handle your trade-in and manage your replacement vehicle from day one.</p>
                     <div className="flex flex-col gap-5">
@@ -390,8 +390,8 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {step === 2 && vehicleStatus === 'other' && (
-                  <motion.div key="step2-other" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {step === 3 && vehicleStatus === 'other' && (
+                  <motion.div key="step3-other" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Describe your enquiry</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">Tell us what you're looking for and our team will get back to you with the right solution.</p>
                     <div>
@@ -407,9 +407,9 @@ export default function ServiceForm() {
                   </motion.div>
                 )}
 
-                {/* ── STEP 3: Contact Details ── */}
-                {step === 3 && (
-                  <motion.div key="step3" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
+                {/* ── STEP 1: Your Details ── */}
+                {step === 1 && (
+                  <motion.div key="step1" initial={{ opacity: 0, x: 24 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -24 }} transition={{ duration: 0.3 }}>
                     <h3 className="text-lg font-bold text-[#111110] mb-2">Your contact details</h3>
                     <p className="text-sm text-[#3d3b37] mb-6">Our team will use these details to follow up with you directly.</p>
                     <div className="flex flex-col gap-5">
