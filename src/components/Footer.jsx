@@ -131,12 +131,13 @@ export default function Footer() {
       <div className="border-t" style={{ borderColor: '#1e1e1c' }}>
         <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-center gap-2.5">
           <span className="text-xs" style={{ color: '#4a4a47' }}>Designed by</span>
-          <img
-            src={blakeLogo}
-            alt="Blake Infiniti Ltd"
-            className="h-5 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity duration-200"
-            style={{ filter: 'brightness(0) invert(1)' }}
-          />
+          <div className="bg-white rounded-lg px-2.5 py-1 opacity-80 hover:opacity-100 transition-opacity duration-200">
+            <img
+              src={blakeLogo}
+              alt="Blake Infiniti Ltd"
+              className="h-5 w-auto object-contain"
+            />
+          </div>
         </div>
       </div>
     </footer>
