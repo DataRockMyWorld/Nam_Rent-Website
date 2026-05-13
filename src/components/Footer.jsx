@@ -1,5 +1,6 @@
 import { Mail, Phone, MapPin } from 'lucide-react';
 import logo from '../assets/logo.jpg';
+import blakeLogo from '../assets/blake-infinity-logo.png';
 
 function LinkedinIcon({ className }) {
   return (
@@ -123,6 +124,19 @@ export default function Footer() {
               <Icon className="w-[15px] h-[15px]" />
             </a>
           ))}
+        </div>
+      </div>
+
+      {/* Designer credit */}
+      <div className="border-t" style={{ borderColor: '#1e1e1c' }}>
+        <div className="max-w-7xl mx-auto px-6 md:px-10 py-4 flex items-center justify-center gap-2.5">
+          <span className="text-xs" style={{ color: '#4a4a47' }}>Designed by</span>
+          <img
+            src={blakeLogo}
+            alt="Blake Infiniti Ltd"
+            className="h-5 w-auto object-contain opacity-50 hover:opacity-80 transition-opacity duration-200"
+            style={{ filter: 'brightness(0) invert(1)' }}
+          />
         </div>
       </div>
     </footer>
